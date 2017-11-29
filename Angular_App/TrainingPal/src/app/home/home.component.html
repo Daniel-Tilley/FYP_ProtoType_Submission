@@ -1,0 +1,17 @@
+<div class="col-md-6 col-md-offset-3">
+    <h1>Hi {{currentUser.F_Name}}!</h1>
+    <h3> Your Profile </h3>
+    <ul>
+      <li> Username: {{currentUser.Id}}</li>
+      <li> Password: {{currentUser.Password}}</li>
+      <li> First Name: {{currentUser.F_Name}}</li>
+      <li> Last Name: {{currentUser.L_Name}}</li>
+      <li> E-Mail: {{currentUser.E_Mail}}</li>
+      <li> Phone Number: {{currentUser.Phone_Number}}</li>
+      <li> DOB: {{currentUser.DOB}}</li>
+      <li> Type: {{currentUser.Type}}</li>
+      <li> Bio: {{currentUser.Bio}}</li>
+    </ul>
+    <p><a [routerLink]="['/update-user']">Edit Profile</a></p>
+    <p><a [routerLink]="['/login']">Logout</a></p>
+</div>

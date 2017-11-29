@@ -1,0 +1,53 @@
+<div class="col-md-6 col-md-offset-3">
+    <h2>Update Your Profile</h2>
+    <p>Enter details you want to update and leave other fields blank</p>
+  <form name="form" (ngSubmit)="f.form.valid && update()" #f="ngForm" novalidate>
+
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !Password.valid }">
+      <label for="Password">Password</label>
+      <input type="password" class="form-control" name="Password" [(ngModel)]="model.Password" #Password="ngModel"/>
+    </div>
+
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !F_Name.valid }">
+      <label for="F_Name">First Name</label>
+      <input type="text" class="form-control" name="firstName" [(ngModel)]="model.F_Name" #F_Name="ngModel"/>
+    </div>
+
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !L_Name.valid }">
+      <label for="L_Name">Last Name</label>
+      <input type="text" class="form-control" name="L_Name" [(ngModel)]="model.L_Name" #L_Name="ngModel"/>
+    </div>
+
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !E_Mail.valid }">
+      <label for="E_Mail">E Mail Address</label>
+      <input type="email" class="form-control" name="E_Mail" [(ngModel)]="model.E_Mail" #E_Mail="ngModel"/>
+    </div>
+
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !Phone_Number.valid }">
+      <label for="Phone_Number">Phone Number</label>
+      <input type="number" class="form-control" name="Phone_Number" [(ngModel)]="model.Phone_Number" #Phone_Number="ngModel"/>
+    </div>
+
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !DOB.valid }">
+      <label for="DOB">Date Of Birth</label>
+      <input type="date" class="form-control" name="DOB" [(ngModel)]="model.DOB" #DOB="ngModel"/>
+    </div>
+
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !Type.valid }">
+      <label for="Type">User Type</label>
+      <input type="radio" class="form-control" name="Type" [(ngModel)]="model.Type" #Type="ngModel" value="ATH" checked> Athlete<br>
+      <input type="radio" class="form-control" name="Type" [(ngModel)]="model.Type" #Type="ngModel" value="COA"> Coach<br>
+    </div>
+
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !Bio.valid }">
+      <label for="Bio">Bio</label>
+      <input type="text" class="form-control" name="Bio" [(ngModel)]="model.Bio" #Bio="ngModel" />
+    </div>
+
+    <div class="form-group">
+      <button [disabled]="loading" class="btn btn-primary">Update</button>
+      <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+      <a [routerLink]="['/login']" class="btn btn-link">Cancel</a>
+    </div>
+  </form>
+</div>
